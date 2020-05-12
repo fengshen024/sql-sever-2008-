@@ -1,0 +1,21 @@
+sp_addtype phone, 'char(11)','not null'9--自定义数据类型
+sp_droptype phone--删除数据类型
+select * from student--查看表里的东西
+alter table student drop column phone --删除某个表的一列
+alter table student add phone char(12)--向某个表添加一列
+
+sp_rename 'sc1','student'--表的重命名
+
+drop table 'sc'--删除表
+
+
+create table xuesheng
+(
+	sname nchar(11),
+	sage int,
+	grade int check(grade<=100 and grade >=0),
+	primary key(sname,sage)
+)/*建表的格式 ，定义你需要的数据 前面是名称，后面是类型 check具有限定的作用，主键是识别表中一个特定行*/
+insert into student values(5,'库5','女',22,null)--向表中添加特定的数据，注意必须格式正确
+update student set sage=25 where sno=1 --更新表的数据
+delete student where sno =2 --删除表的元素，where 后面是键
